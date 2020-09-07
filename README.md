@@ -3,48 +3,40 @@ This module simplifies communicating with CodeX Accounting API.
 
 ## Module initialization
 
-- Import module to project
-```ts
-import Accounting from './accounting';
-```
+1. Import module to project
+    ```ts
+    import Accounting from './accounting';
+    ```
 
-- Create accounting object with accounting URL in parameter
-```ts
-const accounting = new Accounting('127.0.0.1:25565');
-```
+2. Create accounting object with accounting URL in parameter
+    ```ts
+    const accounting = new Accounting({
+      baseURL: '127.0.0.1:25565',
+      tlsVerify: false,
+    });
+    ```
 
-- Use Accounting SDK in your project
-```ts
-accounting.createAccount({
-  name: 'Workspace',
-  type: AccountType.LIABILITY,
-  currency: Currency.USD,
-});
-```
+3. Use Accounting SDK in your project
+    ```ts
+    accounting.createAccount({
+      name: 'Workspace',
+      type: AccountType.LIABILITY,
+      currency: Currency.USD,
+    });
+    ```
 
 ## Using with TLS verification
 
-- Create `tls` folder here
+Create accounting object with settings like this:
 
-- Add cert files to this folder like this:
-```text
-accounting/
-└── tls/
-    ├── ca.pem
-    ├── client.pem
-    └── client-key.pem
+```ts
+const accounting = new Accounting({
+  baseURL: '127.0.0.1:25565',
+  tlsVerify: true,
+  tlsCaCertPath: '/usr/src/app/src/accounting/tls/ca.pem',
+  tlsCertPath: '/usr/src/app/src/accounting/tls/client.pem',
+  tlsKeyPath: '/usr/src/app/src/accounting/tls/client-key.pem',
+});
 ```
 
-- Check paths to files in `.env` file and enable `TLS_VERIFY`
-```dotenv
-# Enable or disable tls verify
-TLS_VERIFY=true
-
-# Files with certs
-TLS_CA_CERT=/usr/src/app/src/accounting/tls/ca.pem
-TLS_CERT=/usr/src/app/src/accounting/tls/client.pem
-TLS_KEY=/usr/src/app/src/accounting/tls/client-key.pem
-```
-
-## TODO
-- [ ] Move this module to individual repository
+You need to assign a value `true` to `tlsVerify` parameter and assign path values to `tlsCaCertPath`, `tlsCertPath` and `tlsKeyPath`.
