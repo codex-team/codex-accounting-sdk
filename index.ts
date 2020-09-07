@@ -31,7 +31,7 @@ export default class Accounting {
 
     return (await this.client.call(MUTATION_CREATE_ACCOUNT, {
       input: accountInput,
-    })).data.data.account.create;
+    })).account.create;
   }
 
   /**
@@ -45,7 +45,7 @@ export default class Accounting {
      *
      * const account = (await this.client.call(QUERY_GET_ACCOUNT, {
      *  id: accountId
-     * })).data.data.getAccount;
+     * })).getAccount;
      */
 
     const response = {

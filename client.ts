@@ -51,7 +51,7 @@ export default class Client {
       variables,
     });
 
-    return response;
+    return response.data.data;
   }
 
   /**
