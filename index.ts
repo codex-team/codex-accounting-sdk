@@ -26,9 +26,6 @@ export default class Accounting {
    * @param accountInput - Account creation mutation input
    */
   public async createAccount(accountInput: AccountInput): Promise<CreateAccountResponse> {
-    console.log('Create account for new workspace');
-    console.log(accountInput);
-
     return (await this.client.call(MUTATION_CREATE_ACCOUNT, {
       input: accountInput,
     })).account.create;
@@ -40,21 +37,8 @@ export default class Accounting {
    * @param accountId - workspace account id
    */
   public async getAccount(accountId: string): Promise<Account> {
-    /**
-     * Uncomment when balance is ready
-     *
-     * const account = (await this.client.call(QUERY_GET_ACCOUNT, {
-     *  id: accountId
-     * })).getAccount;
-     */
-
-    const response = {
-      id: '575204f4-4a5e-485d-aa68-c5af38a05555',
-      name: 'Workspace_name',
-      currency: 'USD',
-      balance: 228,
-    };
-
-    return response;
+    return (await this.client.call(QUERY_GET_ACCOUNT, {
+      id: accountId
+    })).getAccount;
   }
 }

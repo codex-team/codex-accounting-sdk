@@ -8,6 +8,7 @@ query getAccount($id: ID!) {
     id
     name
     currency
+    balance
   }
 }
 `;

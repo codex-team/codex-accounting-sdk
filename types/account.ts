@@ -10,15 +10,15 @@ export interface Account {
     /**
      * Account name (for example, "Cashbook")
      */
-    name?: string;
+    name: string;
 
     /**
      * Account currency
      */
-    currency?: string;
+    currency: string;
 
     /**
      * Account balance
      */
-    balance?: number;
+    balance: number;
   }
