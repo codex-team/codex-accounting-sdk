@@ -5,7 +5,7 @@ This module simplifies communicating with CodeX Accounting API.
 
 1. Import module to project
     ```ts
-    import Accounting from './accounting';
+    import Accounting from 'codex-accounting-sdk';
     ```
 
 2. Create accounting object with accounting URL in parameter
