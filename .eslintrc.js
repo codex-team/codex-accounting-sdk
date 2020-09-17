@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ['codex'],
+  extends: [ 'codex' ],
   env: {
-    'node': true,
-  }
+    node: true,
+  },
 };

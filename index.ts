@@ -38,7 +38,7 @@ export default class Accounting {
    */
   public async getAccount(accountId: string): Promise<Account> {
     return (await this.client.call(QUERY_GET_ACCOUNT, {
-      id: accountId
+      id: accountId,
     })).getAccount;
   }
 }
