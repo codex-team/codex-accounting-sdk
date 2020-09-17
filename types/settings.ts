@@ -1,3 +1,20 @@
+interface TlsSettings {
+  /**
+   * Path to ca cert file
+   */
+  tlsCaCertPath: string;
+
+  /**
+   * Path to client cert file
+   */
+  tlsCertPath: string;
+
+  /**
+   * Path to client keys file
+   */
+  tlsKeyPath: string;
+}
+
 /**
  * Settings for client module
  */
@@ -8,22 +25,7 @@ export interface Settings {
   baseURL: string;
 
   /**
-   * Enable or disable tls verify
+   * Tls verify settings
    */
-  tlsVerify: boolean;
-
-  /**
-   * Path to ca cert file
-   */
-  tlsCaCertPath?: string;
-
-  /**
-   * Path to client cert file
-   */
-  tlsCertPath?: string;
-
-  /**
-   * Path to client keys file
-   */
-  tlsKeyPath?: string;
+  tlsVerify?: TlsSettings;
 }

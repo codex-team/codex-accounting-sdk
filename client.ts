@@ -22,9 +22,9 @@ export default class Client {
 
     if (settings.tlsVerify) {
       httpsAgent = new https.Agent({
-        ca: fs.readFileSync(settings.tlsCaCertPath || ''),
-        cert: fs.readFileSync(settings.tlsCertPath || ''),
-        key: fs.readFileSync(settings.tlsKeyPath || ''),
+        ca: fs.readFileSync(settings.tlsVerify.tlsCaCertPath),
+        cert: fs.readFileSync(settings.tlsVerify.tlsCertPath),
+        key: fs.readFileSync(settings.tlsVerify.tlsKeyPath),
       });
     }
 
