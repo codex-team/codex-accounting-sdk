@@ -12,7 +12,6 @@ This module simplifies communicating with CodeX Accounting API.
     ```ts
     const accounting = new Accounting({
       baseURL: '127.0.0.1:25565',
-      tlsVerify: false,
     });
     ```
 
@@ -32,11 +31,12 @@ Create accounting object with settings like this:
 ```ts
 const accounting = new Accounting({
   baseURL: '127.0.0.1:25565',
-  tlsVerify: true,
-  tlsCaCertPath: '/usr/src/app/src/accounting/tls/ca.pem',
-  tlsCertPath: '/usr/src/app/src/accounting/tls/client.pem',
-  tlsKeyPath: '/usr/src/app/src/accounting/tls/client-key.pem',
+  tlsVerify: {
+    tlsCaCertPath: '/usr/src/app/src/accounting/tls/ca.pem',
+    tlsCertPath: '/usr/src/app/src/accounting/tls/client.pem',
+    tlsKeyPath: '/usr/src/app/src/accounting/tls/client-key.pem',
+  },
 });
 ```
 
-You need to assign a value `true` to `tlsVerify` parameter and assign path values to `tlsCaCertPath`, `tlsCertPath` and `tlsKeyPath`.
+You need to assign path values to `tlsCaCertPath`, `tlsCertPath` and `tlsKeyPath` in `tlsVerify` object.
