@@ -6,6 +6,10 @@
   "author": "CodeX Team",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "lint-test": "eslint -c ./.eslintrc.js ./ --ext .ts,.js --max-warnings 0",
+    "lint": "eslint -c ./.eslintrc.js ./ --ext .ts,.js --fix"
+  },
   "dependencies": {
     "@types/node": "^14.6.4",
     "axios": "^0.20.0",
