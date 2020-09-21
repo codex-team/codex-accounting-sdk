@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "lint-test": "eslint -c ./.eslintrc.js ./ --ext .ts,.js",
+    "lint-test": "eslint -c ./.eslintrc.js ./ --ext .ts,.js --max-warnings 0",
     "lint": "eslint -c ./.eslintrc.js ./ --ext .ts,.js --fix"
   },
   "dependencies": {
