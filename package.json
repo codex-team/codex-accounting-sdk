@@ -7,6 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "build": "tsc",
     "lint-test": "eslint -c ./.eslintrc.js ./ --ext .ts,.js --max-warnings 0",
     "lint": "eslint -c ./.eslintrc.js ./ --ext .ts,.js --fix"
   },
