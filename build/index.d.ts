@@ -1,4 +1,4 @@
-import { AccountInput, CreateAccountResponse, Settings, Account, Currency, AccountType } from './types';
+import { AccountInput, CreateAccountResponse, Settings, Account } from './types';
 /**
  * Class for communicating with CodeX Accounting API
  */
@@ -26,4 +26,4 @@ export default class Accounting {
      */
     getAccount(accountId: string): Promise<Account>;
 }
-export { AccountType, Currency };
+export * from './types';

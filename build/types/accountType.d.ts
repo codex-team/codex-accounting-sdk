@@ -2,7 +2,7 @@
  * Available account types
  * See: https://www.principlesofaccounting.com/account-types/
  */
-export declare enum AccountType {
+export declare const enum AccountType {
     /**
      * When we need to pay some money to someone (credit)
      */

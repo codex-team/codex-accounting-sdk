@@ -1,4 +1,14 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -12,10 +22,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Currency = exports.AccountType = void 0;
-const types_1 = require("./types");
-Object.defineProperty(exports, "Currency", { enumerable: true, get: function () { return types_1.Currency; } });
-Object.defineProperty(exports, "AccountType", { enumerable: true, get: function () { return types_1.AccountType; } });
 const queries_1 = require("./queries");
 const client_1 = __importDefault(require("./client"));
 /**
@@ -56,3 +62,4 @@ class Accounting {
     }
 }
 exports.default = Accounting;
+__exportStar(require("./types"), exports);
