@@ -1,7 +1,7 @@
 /**
  * Available currencies
  */
-export enum Currency {
+export const enum Currency {
   /**
    * USA dollars
    */

@@ -1,4 +1,4 @@
-import { AccountInput, CreateAccountResponse, Settings, Account, Currency, AccountType } from './types';
+import { AccountInput, CreateAccountResponse, Settings, Account } from './types';
 import { MUTATION_CREATE_ACCOUNT, QUERY_GET_ACCOUNT } from './queries';
 import Client from './client';
 
@@ -43,4 +43,4 @@ export default class Accounting {
   }
 }
 
-export { AccountType, Currency };
+export * from './types';
