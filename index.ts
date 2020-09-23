@@ -42,3 +42,5 @@ export default class Accounting {
     })).getAccount;
   }
 }
+
+export * from './types';
