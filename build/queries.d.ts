@@ -6,3 +6,7 @@ export declare const QUERY_GET_ACCOUNT = "\nquery getAccount($id: ID!) {\n  getA
  * Mutation for creating account
  */
 export declare const MUTATION_CREATE_ACCOUNT = "\n  mutation AccountCreateMutation($input: AccountInput!) {\n    account {\n      create(input: $input) {\n        recordId\n      }\n    }\n  }\n";
+/**
+ * Purchase mutation
+ */
+export declare const MUTATION_PURCHASE = "\n  mutation Purchase($input: PurchaseInput!){\n    purchase(input: $input) {\n      recordId\n    }\n  }\n";
