@@ -26,3 +26,15 @@ export const MUTATION_CREATE_ACCOUNT = `
     }
   }
 `;
+
+// language=GraphQL
+/**
+ * Purchase mutation
+ */
+export const MUTATION_PURCHASE = `
+  mutation Purchase($input: PurchaseInput!){
+    purchase(input: $input) {
+      recordId
+    }
+  }
+`;
