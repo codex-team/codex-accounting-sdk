@@ -27,11 +27,21 @@ class Client {
     constructor(settings) {
         let httpsAgent = null;
         if (settings.tlsVerify) {
-            httpsAgent = new https_1.default.Agent({
-                ca: fs_1.default.readFileSync(settings.tlsCaCertPath || ''),
-                cert: fs_1.default.readFileSync(settings.tlsCertPath || ''),
-                key: fs_1.default.readFileSync(settings.tlsKeyPath || ''),
-            });
+            try {
+                httpsAgent = new https_1.default.Agent({
+                    ca: fs_1.default.readFileSync(settings.tlsVerify.tlsCaCertPath),
+                    cert: fs_1.default.readFileSync(settings.tlsVerify.tlsCertPath),
+                    key: fs_1.default.readFileSync(settings.tlsVerify.tlsKeyPath),
+                });
+            }
+            catch (error) {
+                if (error.code === 'ENOENT') {
+                    console.error('Cert files not found!');
+                }
+                else {
+                    console.error(error);
+                }
+            }
         }
         this.apiInstance = axios_1.default.create({
             baseURL: settings.baseURL,
