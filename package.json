@@ -1,11 +1,17 @@
 {
   "name": "codex-accounting-sdk",
-  "version": "1.0.0",
-  "main": "index.ts",
+  "version": "1.1.0",
+  "types": "build/index.d.ts",
+  "main": "build/index.js",
   "repository": "https://github.com/codex-team/codex-accounting-sdk.git",
   "author": "CodeX Team",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "build": "tsc",
+    "lint-test": "eslint ./ --ext .ts --max-warnings 0",
+    "lint": "eslint ./ --ext .ts --fix"
+  },
   "dependencies": {
     "@types/node": "^14.6.4",
     "axios": "^0.20.0",

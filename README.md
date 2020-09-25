@@ -40,3 +40,11 @@ const accounting = new Accounting({
 ```
 
 You need to assign path values to `tlsCaCertPath`, `tlsCertPath` and `tlsKeyPath` in `tlsVerify` object.
+
+## Build library
+
+To build the library, run the following command:
+
+```shell script
+yarn build
+```

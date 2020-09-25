@@ -1,6 +1,7 @@
 import { AccountInput, CreateAccountResponse, Settings, Account } from './types';
-import { MUTATION_CREATE_ACCOUNT, QUERY_GET_ACCOUNT } from './queries';
+import { MUTATION_CREATE_ACCOUNT, MUTATION_PURCHASE, QUERY_GET_ACCOUNT } from './queries';
 import Client from './client';
+import { PurchaseInput, PurchaseResponse } from './types/purchaseMutation';
 
 /**
  * Class for communicating with CodeX Accounting API
@@ -38,7 +39,20 @@ export default class Accounting {
    */
   public async getAccount(accountId: string): Promise<Account> {
     return (await this.client.call(QUERY_GET_ACCOUNT, {
-      id: accountId
+      id: accountId,
     })).getAccount;
   }
+
+  /**
+   * Decrease money from account
+   *
+   * @param purchaseInput - purchase data
+   */
+  public async purchase(purchaseInput: PurchaseInput): Promise<PurchaseResponse> {
+    return (await this.client.call(MUTATION_PURCHASE, {
+      input: purchaseInput,
+    })).purchase;
+  }
 }
+
+export * from './types';
