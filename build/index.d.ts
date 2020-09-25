@@ -1,4 +1,5 @@
 import { AccountInput, CreateAccountResponse, Settings, Account } from './types';
+import { PurchaseInput, PurchaseResponse } from './types/purchaseMutation';
 /**
  * Class for communicating with CodeX Accounting API
  */
@@ -25,5 +26,11 @@ export default class Accounting {
      * @param accountId - workspace account id
      */
     getAccount(accountId: string): Promise<Account>;
+    /**
+     * Decrease money from account
+     *
+     * @param purchaseInput - purchase data
+     */
+    purchase(purchaseInput: PurchaseInput): Promise<PurchaseResponse>;
 }
 export * from './types';

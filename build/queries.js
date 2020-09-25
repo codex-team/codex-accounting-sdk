@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MUTATION_CREATE_ACCOUNT = exports.QUERY_GET_ACCOUNT = void 0;
+exports.MUTATION_PURCHASE = exports.MUTATION_CREATE_ACCOUNT = exports.QUERY_GET_ACCOUNT = void 0;
 // language=GraphQL
 /**
  * Query to get account by id
@@ -25,6 +25,17 @@ exports.MUTATION_CREATE_ACCOUNT = `
       create(input: $input) {
         recordId
       }
+    }
+  }
+`;
+// language=GraphQL
+/**
+ * Purchase mutation
+ */
+exports.MUTATION_PURCHASE = `
+  mutation Purchase($input: PurchaseInput!){
+    purchase(input: $input) {
+      recordId
     }
   }
 `;

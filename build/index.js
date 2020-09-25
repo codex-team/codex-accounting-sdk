@@ -60,6 +60,18 @@ class Accounting {
             })).getAccount;
         });
     }
+    /**
+     * Decrease money from account
+     *
+     * @param purchaseInput - purchase data
+     */
+    purchase(purchaseInput) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return (yield this.client.call(queries_1.MUTATION_PURCHASE, {
+                input: purchaseInput,
+            })).purchase;
+        });
+    }
 }
 exports.default = Accounting;
 __exportStar(require("./types"), exports);
