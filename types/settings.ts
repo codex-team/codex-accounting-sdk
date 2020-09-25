@@ -1,4 +1,7 @@
-interface TlsSettings {
+/**
+ * Paths to tls certs
+ */
+export interface TlsSettings {
   /**
    * Path to ca cert file
    */
