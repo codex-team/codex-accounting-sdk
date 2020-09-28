@@ -72,6 +72,18 @@ class Accounting {
             })).purchase;
         });
     }
+    /**
+     * Increase account balance
+     *
+     * @param input - data for depositing money
+     */
+    payOnce(input) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return (yield this.client.call(queries_1.MUTATION_PAY_ONCE, {
+                input,
+            })).deposit;
+        });
+    }
 }
 exports.default = Accounting;
 __exportStar(require("./types"), exports);

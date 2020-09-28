@@ -1,5 +1,5 @@
-import { AccountInput, CreateAccountResponse, Settings, Account } from './types';
-import { MUTATION_CREATE_ACCOUNT, MUTATION_PURCHASE, QUERY_GET_ACCOUNT } from './queries';
+import { AccountInput, CreateAccountResponse, Settings, Account, TransactionResponse, DepositMutationInput, PurchaseMutationInput } from './types';
+import { QUERY_GET_ACCOUNT, MUTATION_CREATE_ACCOUNT, MUTATION_PAY_ONCE, MUTATION_PURCHASE } from './queries';
 import Client from './client';
 import { PurchaseInput, PurchaseResponse } from './types/purchaseMutation';
 
@@ -52,6 +52,17 @@ export default class Accounting {
     return (await this.client.call(MUTATION_PURCHASE, {
       input: purchaseInput,
     })).purchase;
+  }
+
+  /**
+   * Increase account balance
+   *
+   * @param input - data for depositing money
+   */
+  public async payOnce(input: DepositMutationInput): Promise<TransactionResponse> {
+    return (await this.client.call(MUTATION_PAY_ONCE, {
+      input,
+    })).deposit;
   }
 }
 

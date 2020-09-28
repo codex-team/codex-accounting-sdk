@@ -10,3 +10,7 @@ export declare const MUTATION_CREATE_ACCOUNT = "\n  mutation AccountCreateMutati
  * Purchase mutation
  */
 export declare const MUTATION_PURCHASE = "\n  mutation Purchase($input: PurchaseInput!){\n    purchase(input: $input) {\n      recordId\n    }\n  }\n";
+/**
+ * Increase account balance
+ */
+export declare const MUTATION_PAY_ONCE = "\n  mutation PayOnce($input: DepositInput!) {\n    deposit(input:$input){\n      recordId\n    }\n  }\n";
