@@ -1,4 +1,4 @@
-import { AccountInput, CreateAccountResponse, Settings, Account, TransactionResponse, DepositMutationInput, PurchaseMutationInput } from './types';
+import { AccountInput, CreateAccountResponse, Settings, Account, TransactionResponse, DepositMutationInput } from './types';
 import { QUERY_GET_ACCOUNT, MUTATION_CREATE_ACCOUNT, MUTATION_PAY_ONCE, MUTATION_PURCHASE } from './queries';
 import Client from './client';
 import { PurchaseInput, PurchaseResponse } from './types/purchaseMutation';

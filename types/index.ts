@@ -1,5 +1,5 @@
 export { AccountType } from './accountType';
-export { AccountInput, CreateAccountResponse, PurchaseMutationInput } from './accountMutations';
+export { AccountInput, CreateAccountResponse } from './accountMutations';
 export { TransactionData, TransactionResponse } from './transactions';
 export { DepositMutationInput } from './deposits';
 export { Account } from './account';
