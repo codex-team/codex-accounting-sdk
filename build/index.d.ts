@@ -1,4 +1,4 @@
-import { AccountInput, CreateAccountResponse, Settings, Account } from './types';
+import { AccountInput, CreateAccountResponse, Settings, Account, TransactionResponse, DepositMutationInput } from './types';
 import { PurchaseInput, PurchaseResponse } from './types/purchaseMutation';
 /**
  * Class for communicating with CodeX Accounting API
@@ -32,5 +32,11 @@ export default class Accounting {
      * @param purchaseInput - purchase data
      */
     purchase(purchaseInput: PurchaseInput): Promise<PurchaseResponse>;
+    /**
+     * Increase account balance
+     *
+     * @param input - data for depositing money
+     */
+    payOnce(input: DepositMutationInput): Promise<TransactionResponse>;
 }
 export * from './types';
