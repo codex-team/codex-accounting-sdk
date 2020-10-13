@@ -8,7 +8,9 @@ query getAccount($id: ID!) {
     id
     name
     currency
-    balance
+    balance {
+      amount
+    }
   }
 }
 `;
