@@ -10,4 +10,6 @@ export declare const enum Currency {
 /**
  * The multiplier for the amount without pennies
  */
-export declare const PENNY_MULTIPLIER = 100;
+export declare const PENNY_MULTIPLIER: {
+    amount: number;
+};

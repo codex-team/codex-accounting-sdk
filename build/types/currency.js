@@ -4,4 +4,6 @@ exports.PENNY_MULTIPLIER = void 0;
 /**
  * The multiplier for the amount without pennies
  */
-exports.PENNY_MULTIPLIER = 100;
+exports.PENNY_MULTIPLIER = {
+    amount: 100,
+};
