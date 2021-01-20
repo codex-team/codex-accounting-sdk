@@ -3,16 +3,17 @@
  * Query to get account by id
  */
 export const QUERY_GET_ACCOUNT = `
-query getAccount($id: ID!) {
-  getAccount(id: $id) {
-    id
-    name
-    currency
-    balance {
-      amount
+  query getAccount($id: ID!) {
+    getAccount(id: $id) {
+      id
+      name
+      dtCreated
+      currency
+      balance {
+        amount
+      }
     }
   }
-}
 `;
 
 // language=GraphQL

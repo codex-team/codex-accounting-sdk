@@ -2,23 +2,33 @@
  * The base unit of an accounting system
  */
 export interface Account {
-    /**
-     * Account id
-     */
-    id: string;
+  /**
+   * Account id
+   */
+  id: string;
 
-    /**
-     * Account name (for example, "Cashbook")
-     */
-    name: string;
+  /**
+   * Account name (for example, "Cashbook")
+   */
+  name: string;
 
-    /**
-     * Account currency
-     */
-    currency: string;
+  /**
+   * Date when account was created
+   */
+  dtCreated: number;
 
+  /**
+   * Account currency
+   */
+  currency: string;
+
+  /**
+   * Account balance
+   */
+  balance: {
     /**
-     * Account balance
+     * Amount of balance
      */
-    balance: number;
-  }
+    amount: number;
+  };
+}
