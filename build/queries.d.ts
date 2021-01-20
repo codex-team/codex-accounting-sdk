@@ -1,7 +1,7 @@
 /**
  * Query to get account by id
  */
-export declare const QUERY_GET_ACCOUNT = "\nquery getAccount($id: ID!) {\n  getAccount(id: $id) {\n    id\n    name\n    currency\n    balance {\n      amount\n    }\n  }\n}\n";
+export declare const QUERY_GET_ACCOUNT = "\n  query getAccount($id: ID!) {\n    getAccount(id: $id) {\n      id\n      name\n      dtCreated\n      currency\n      balance {\n        amount\n      }\n    }\n  }\n";
 /**
  * Mutation for creating account
  */
