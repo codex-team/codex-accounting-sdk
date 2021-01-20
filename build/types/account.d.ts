@@ -11,11 +11,20 @@ export interface Account {
      */
     name: string;
     /**
+     * Date when account was created
+     */
+    dtCreated: number;
+    /**
      * Account currency
      */
     currency: string;
     /**
      * Account balance
      */
-    balance: number;
+    balance: {
+        /**
+         * Amount of balance
+         */
+        amount: number;
+    };
 }

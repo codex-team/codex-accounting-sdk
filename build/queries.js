@@ -6,16 +6,17 @@ exports.MUTATION_PAY_ONCE = exports.MUTATION_PURCHASE = exports.MUTATION_CREATE_
  * Query to get account by id
  */
 exports.QUERY_GET_ACCOUNT = `
-query getAccount($id: ID!) {
-  getAccount(id: $id) {
-    id
-    name
-    currency
-    balance {
-      amount
+  query getAccount($id: ID!) {
+    getAccount(id: $id) {
+      id
+      name
+      dtCreated
+      currency
+      balance {
+        amount
+      }
     }
   }
-}
 `;
 // language=GraphQL
 /**
