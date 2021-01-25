@@ -10,7 +10,7 @@ export interface DepositMutationInput {
   /**
    * Deposit amount: the increase value
    */
-  amount: number;
+  amount: bigint;
 
   /**
    * Deposit purpose: short description of operation

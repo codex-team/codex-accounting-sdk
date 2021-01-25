@@ -25,6 +25,6 @@ export interface Account {
         /**
          * Amount of balance
          */
-        amount: number;
+        amount: bigint;
     };
 }

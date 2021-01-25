@@ -10,7 +10,7 @@ export interface PurchaseInput {
   /**
    * The cost of service or payment amount
    */
-  amount: number;
+  amount: bigint;
 
   /**
    * Operation purpose or description
